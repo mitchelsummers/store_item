@@ -18,12 +18,30 @@ class Vehicle
 end
 
 class Car < Vehicle
+  attr_reader :feul, :make, :model
+
+  def initialize
+    super
+    @fuel = "deisel"
+    @make = "volkswagon"
+    @model = "GTI"
+  end
+
   def honk_horn
     puts "Beeeeeeep!"
   end
 end
 
 class Bike < Vehicle
+  attr_reader :type, :weight, :size
+
+  def initialize
+    super
+    @type = "Mountain"
+    @weight = "176"
+    @size = "23"
+  end
+
   def ring_bell
     puts "Ring ring!"
   end
