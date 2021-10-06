@@ -3,13 +3,15 @@ item_2 = { :name => "speaker", :color => "black", price: 30 }
 item_3 = { :name => "lamp", :color => "yellow", price: 15 }
 
 puts item_1
+
+class Item
   attr_reader :name, :color
   attr_writer :price
-class Item
-  def initialize(input_name, input_color, input_price)
-      @name = input_name
-      @color = input_color
-      @price = input_price
+
+  def initialize(name, color, price)
+    @name = name
+    @color = color
+    @price = price
   end
 
   def print_info
@@ -17,9 +19,12 @@ class Item
   end
 end
 
-item1 = Item.new{"toy", "red", 20}
-item2 = Item.new{"speakers", "black", 30}
-item3 = Item.new{"lamp","yellow", 15}
-item1.print_info
-item2.print_info
-item3.print_info
+item1 = Item.new("toy", "red", 20)
+item2 = Item.new("speakers", "black", 30)
+item3 = Item.new("lamp", "yellow", 15)
+
+p item1
+p item2
+p item3
+item1.price = 25
+puts item1
