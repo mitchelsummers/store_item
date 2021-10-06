@@ -5,7 +5,7 @@ item_3 = { :name => "lamp", :color => "yellow", price: 15 }
 puts item_1
 
 class Item
-  attr_reader :name, :color
+  attr_reader :name, :color, :price
   attr_writer :price
 
   def initialize(input_options)
