@@ -8,23 +8,22 @@ class Item
   attr_reader :name, :color
   attr_writer :price
 
-  def initialize(name, color, price)
-    @name = name
-    @color = color
-    @price = price
+  def initialize(input_options)
+    @name = input_options[:name]
+    @color = input_options[:color]
+    @price = input_options[:price]
   end
 
   def print_info
-    puts "The #{name} is #{color} and costs #{price}."
+    puts "The #{@name} is #{@color} and costs #{@price}."
   end
 end
 
-item1 = Item.new("toy", "red", 20)
-item2 = Item.new("speakers", "black", 30)
-item3 = Item.new("lamp", "yellow", 15)
+item1 = Item.new({ :name => "toy", :color => "red", :price => 20 })
+item2 = Item.new({ :name => "speaker", :color => "black", :price => 30 })
+item3 = Item.new({ :name => "lamp", :color => "yellow", :price => 15 })
 
 p item1
 p item2
 p item3
 item1.price = 25
-puts item1
