@@ -36,18 +36,14 @@ class Manager < Employee
   end
 
   def give_all_raises
-    i = 0
-    while i < @employees.length
-      @employees][i][:salary] = give_annual_raise
-      i += 1
+    @employees.each do |employee|
+      employee.give_annual_raise
     end
   end
 
   def fire_all_employees
-    i = 0
-    while i < @employees.length
-      @employees[i][:active] = false
-      i += 1
+    @employees.each do |employee|
+      employee.active = false
     end
   end
 end
@@ -56,4 +52,6 @@ manager = Manager.new(first_name: "Saron", last_name: "Yitbarek", salary: 100000
 manager.print_info
 manager.send_report
 manager.give_all_raises
+p manager
+manager.fire_all_employees
 p manager
